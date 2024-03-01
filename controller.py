@@ -38,4 +38,10 @@ def start_app():
                     name = model.delete_contact(u_id)
                     veiw.show_message(text.delete_contact_successful(name))
             case 8:
+                if find_contacts(text.input_search_word_for_copy):
+                    u_id = int(veiw.input_data(text.input_id_for_copy))
+                    model.copy_to_another_file(u_id)
+                    name = model.copy_to_another_file(u_id)
+                    veiw.show_message(text.copy_contact_successful(name))
+            case 9:
                 brake

@@ -1,5 +1,6 @@
 phone_book = {}
 path = '/Users/aleksejdemkin/PycharmProjects/phone_book/phones.txt'
+path_to_copy = '/Users/aleksejdemkin/PycharmProjects/phone_book/phones_to_copy.txt'
 SEPARATOR = ';'
 
 def open_phone_book():
@@ -47,9 +48,17 @@ def edit_contact(u_id: int, edited_contact: list[str]):
     phone_book[u_id] = current_contact
     return current_contact[0]
 
-def delete_contact(u_id: int) ->str:
+def delete_contact(u_id: int):
     global phone_book
     return phone_book.pop(u_id)[0]  #возвращается только имя (нам надо только имя)
 
 
-
+def copy_to_another_file(u_id: int):
+    global phone_book
+    current_contact = phone_book[u_id]
+    data = []
+    data.append(SEPARATOR.join(current_contact))
+    data = '\n'.join(data)
+    with open(path_to_copy, 'r', encoding='UTF-8') as file:
+        file.write(data)
+    return current_contact[0]

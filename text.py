@@ -6,6 +6,7 @@ main_menu =['Главное меню',
             'Найти контакт',
             'Изменить контакт',
             'Удалить контакт',
+            'Скопировать контакт',
             'Выход']
 
 choice_main_menu = f'Выбрать пункт меню ({1}-{len(main_menu)-1}):'
@@ -34,9 +35,12 @@ input_search_word = 'Введите слово для поиска: '
 
 input_search_word_for_edit = 'Введите слово для поиска контакта, который хотите изменить: '
 input_search_word_for_delete = 'Введите слово для поиска контакта, который хотите удалить: '
+input_search_word_for_copy = 'Введите слово для поиска контакта, который хотите скопировать: '
 
 input_id_for_edit = 'Введите ID контакта, который хотите изменить: '
 input_id_for_delete = 'Введите ID контакта, который хотите удалить: '
+
+input_id_for_copy = 'Введите ID контакта, который хотите скопировать: '
 
 
 def new_contact_added_successfull(name: str) -> str:
@@ -51,3 +55,6 @@ def edit_contact_successful(name) -> str:
 
 def delete_contact_successful(name) -> str:
     return  f'Контакт "{name}" успешно удалён!'
+
+def copy_contact_successful(name) -> str:
+    return  f'Контакт "{name}" успешно скопирован!'
